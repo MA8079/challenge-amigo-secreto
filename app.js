@@ -1,7 +1,7 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let listaAmigos = [];
 let campoNombre;
-let regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+$/;
+let regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+$/; // Validar carácteres latinoamericanos
 
 function agregarAmigo() {
     campoNombre = document.getElementById('amigo').value;
