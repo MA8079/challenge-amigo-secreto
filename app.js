@@ -3,6 +3,7 @@ let listaAmigos = [];
 let campoNombre;
 let regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+$/; // Validar carácteres latinoamericanos
 
+
 function agregarAmigo() {
     campoNombre = document.getElementById('amigo').value;
     if (regex.test(campoNombre)) {
@@ -28,15 +29,16 @@ function mostrarListaDeAmigos() {
     }    
 }
 
-function numeroAleatorio(numeroMaximo) {
-    return Math.floor(Math.random() * numeroMaximo);
+function numeroAleatorio(totalAmigos) {
+    return Math.floor(Math.random() * totalAmigos);
 }
 
 function sortearAmigo() {
     let numeroSorteado = numeroAleatorio(listaAmigos.length);
     let amigoSecreto = listaAmigos[numeroSorteado];
     mostrarResultado(amigoSecreto);
-    setTimeout(restablecerCondiciones(),5000);
+    
+    cambiarBoton("button",iconoRefresh,'Jugar de nuevo');
 
 }
 
@@ -53,12 +55,5 @@ function limpiarCaja() {
     document.querySelector('.input-name').value = '';
 
 }
-
-function restablecerCondiciones(){
-    listaAmigos=[];
-    let lista = document.querySelector('#listaAmigos');
-    lista.innerHTML='';
-
-};
 
 
