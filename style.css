@@ -132,6 +132,7 @@ ul {
     font-family: "Inter", sans-serif;
     font-size: 18px;
     margin: 20px 0;
+    font-weight: 600;
 }
 
 .result-list {
@@ -154,7 +155,9 @@ ul {
 }
 
 .button-draw img {
+    width: 2em;
     margin-right: 40px;
+    
 }
 
 .button-draw:hover {

@@ -2,6 +2,8 @@
 let listaAmigos = [];
 let campoNombre;
 let regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+$/; // Validar carácteres latinoamericanos
+const botonJugar = document.getElementById('boton-jugar');
+const botonReiniciar = document.getElementById('boton-reiniciar');
 
 
 function agregarAmigo() {
@@ -18,7 +20,6 @@ function agregarAmigo() {
     }
 }
 
-
 function mostrarListaDeAmigos() {
     let lista = document.querySelector('#listaAmigos');
     lista.innerHTML = '';
@@ -26,7 +27,7 @@ function mostrarListaDeAmigos() {
         let itemLista = document.createElement('li'); // Crear un elemento lista
         itemLista.textContent = listaAmigos[index]; // asignar valor de indice
         lista.appendChild(itemLista);
-    }    
+    }
 }
 
 function numeroAleatorio(totalAmigos) {
@@ -37,9 +38,11 @@ function sortearAmigo() {
     let numeroSorteado = numeroAleatorio(listaAmigos.length);
     let amigoSecreto = listaAmigos[numeroSorteado];
     mostrarResultado(amigoSecreto);
-    
-    cambiarBoton("button",iconoRefresh,'Jugar de nuevo');
-
+    setTimeout(() => {
+        botonReiniciar.style.display = 'flex';
+        botonJugar.style.display = 'none';
+        //botonJugar.setAttribute('dissabled','true');
+    }, 1000);
 }
 
 function mostrarResultado(nombre) {
@@ -55,5 +58,23 @@ function limpiarCaja() {
     document.querySelector('.input-name').value = '';
 
 }
+function reiniciarJuego(){
+    condicionesIniciales();
+};
+
+function condicionesIniciales() {
+    listaAmigos=[];
+    let amigosLista=document.getElementById('listaAmigos');
+    amigosLista.innerHTML='';
+    let listaResultado=document.getElementById('resultado');
+    listaResultado.innerHTML='';
+    botonReiniciar.style.display = 'none';
+    botonJugar.style.display='flex';
+}
+
+condicionesIniciales();
+
+
+
 
 
