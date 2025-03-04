@@ -154,11 +154,16 @@ ul {
     font-size: 16px;
 }
 
+#boton-reiniciar{
+    display: none;
+}
 .button-draw img {
     width: 2em;
     margin-right: 40px;
     
 }
+
+
 
 .button-draw:hover {
     background-color: var(--color-button-hover);

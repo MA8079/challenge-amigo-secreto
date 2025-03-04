@@ -1,7 +1,7 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let listaAmigos = [];
 let campoNombre;
-let regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+$/; // Validar carácteres latinoamericanos
+let regex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ]+$/; // Validar carácteres 
 const botonJugar = document.getElementById('boton-jugar');
 const botonReiniciar = document.getElementById('boton-reiniciar');
 
@@ -33,16 +33,15 @@ function mostrarListaDeAmigos() {
 function numeroAleatorio(totalAmigos) {
     return Math.floor(Math.random() * totalAmigos);
 }
-
+/*Esta función va a mostrar el boton reiniciar juego y ocultar el botón sortear,
+esto permite ofrecer al usuario una mejor experiencia evitando recargar la página.
+*/
 function sortearAmigo() {
     let numeroSorteado = numeroAleatorio(listaAmigos.length);
     let amigoSecreto = listaAmigos[numeroSorteado];
     mostrarResultado(amigoSecreto);
-    setTimeout(() => {
-        botonReiniciar.style.display = 'flex';
-        botonJugar.style.display = 'none';
-        //botonJugar.setAttribute('dissabled','true');
-    }, 1000);
+    botonReiniciar.style.display = 'flex';
+    botonJugar.style.display = 'none';
 }
 
 function mostrarResultado(nombre) {
@@ -58,21 +57,20 @@ function limpiarCaja() {
     document.querySelector('.input-name').value = '';
 
 }
-function reiniciarJuego(){
+function reiniciarJuego() {
     condicionesIniciales();
 };
 
 function condicionesIniciales() {
-    listaAmigos=[];
-    let amigosLista=document.getElementById('listaAmigos');
-    amigosLista.innerHTML='';
-    let listaResultado=document.getElementById('resultado');
-    listaResultado.innerHTML='';
+    listaAmigos = [];
+    let amigosLista = document.getElementById('listaAmigos');
+    amigosLista.innerHTML = '';
+    let listaResultado = document.getElementById('resultado');
+    listaResultado.innerHTML = '';
     botonReiniciar.style.display = 'none';
-    botonJugar.style.display='flex';
+    botonJugar.style.display = 'flex';
 }
 
-condicionesIniciales();
 
 
 
